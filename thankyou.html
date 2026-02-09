@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Special One 💝</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFE5EC 0%, #E6E6FA 50%, #FFB6C1 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+        
+        /* Lotus Animation Background */
+        .lotus-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .lotus {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.15;
+            animation: lotusGrow 8s ease-in-out infinite;
+        }
+        
+        .lotus-left {
+            bottom: -50px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .lotus-right {
+            bottom: -50px;
+            right: 10%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes lotusGrow {
+            0% {
+                transform: scale(0) translateY(100px) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.15;
+                transform: scale(1) translateY(0) rotate(10deg);
+            }
+            100% {
+                transform: scale(0.8) translateY(-20px) rotate(-10deg);
+                opacity: 0.15;
+            }
+        }
+        
+        /* Floating hearts */
+        .heart-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatHeart 15s infinite;
+            opacity: 0.2;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main container */
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 50px 40px 60px;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(255, 105, 180, 0.35);
+            backdrop-filter: blur(15px);
+            max-width: 700px;
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+            border: 3px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Header */
+        .thank-you-header {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            background: linear-gradient(45deg, #FF1493, #FF69B4, #DDA0DD, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 5px rgba(255, 105, 180, 0.3));
+            }
+            50% {
+                filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 105, 180, 0.5));
+            }
+        }
+        
+        /* Special message title */
+        .special-message-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            color: #8B0000;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.4);
+        }
+        
+        /* Book Card Container */
+        .book-card-container {
+            perspective: 1500px;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+        
+        .book-card {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Book Front - Birthday Card */
+        .book-front {
+            background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+        }
+        
+        .book-front-inner {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 3px solid rgba(139, 0, 139, 0.3);
+        }
+        
+        .balloons {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: balloonFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes balloonFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .ribbon {
+            font-size: 5em;
+            margin: 20px 0;
+        }
+        
+        .birthday-title {
+            background: linear-gradient(135deg, #8B008B, #FF69B4);
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .birthday-text-1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: white;
+            font-weight: 400;
+        }
+        
+        .birthday-text-2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2.5em;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 5px 0;
+        }
+        
+        .birthday-text-3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: white;
+            font-weight: 400;
+        }
+        
+        .tap-to-open {
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: white;
+            padding: 12px 40px;
+            border-radius: 25px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 20px;
+            display: inline-block;
+            animation: tapPulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes tapPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
+            }
+        }
+        
+        .sparkles-top {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        
+        /* Open book */
+        .book-open {
+            display: none;
+            background: linear-gradient(135deg, #FFF0F5, #FFE4E1);
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.5);
+            animation: bookOpen 0.8s ease-out;
+        }
+        
+        @keyframes bookOpen {
+            from {
+                opacity: 0;
+                transform: rotateY(-90deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateY(0);
+            }
+        }
+        
+        .book-card.opened .book-front {
+            display: none;
+        }
+        
+        .book-card.opened .book-open {
+            display: block;
+        }
+        
+        .book-content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            display: flex;
+            gap: 30px;
+            min-height: 400px;
+            border: 3px solid rgba(139, 0, 139, 0.2);
+        }
+        
+        .book-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 2px dashed rgba(255, 105, 180, 0.3);
+            padding-right: 30px;
+        }
+        
+        .book-left-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2em;
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        .book-right {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+        }
+        
+        .book-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.8;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        /* Glowing Button */
+        .glow-button {
+            background: linear-gradient(135deg, #FF69B4, #FFB6C1, #FFD700);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            transition: all 0.4s ease;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes buttonPulse {
+            0%, 100% {
+                box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            }
+            50% {
+                box-shadow: 0 20px 50px rgba(255, 105, 180, 0.7);
+            }
+        }
+        
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .glow-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .glow-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.7);
+        }
+        
+        .glow-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Go Back Button - Different styling */
+        .go-back-button {
+            background: linear-gradient(135deg, #8B008B, #FF1493);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(139, 0, 139, 0.4);
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            display: none;
+        }
+
+        .go-back-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(139, 0, 139, 0.6);
+        }
+
+        .go-back-button.show {
+            display: inline-block;
+        }
+        
+        /* Sparkles */
+        .sparkle-decoration {
+            position: absolute;
+            font-size: 1.5em;
+            animation: sparkle 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+        
+        /* Hidden book styling */
+        .hidden-book {
+            display: none;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px 50px;
+            }
+            
+            .thank-you-header {
+                font-size: 3em;
+            }
+            
+            .special-message-title {
+                font-size: 1.5em;
+            }
+            
+            .book-content {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+            
+            .book-left {
+                border-right: none;
+                border-bottom: 2px dashed rgba(255, 105, 180, 0.3);
+                padding-right: 0;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+
+            .book-right {
+                padding-left: 0;
+                padding-top: 20px;
+            }
+            
+            .book-left-text {
+                font-size: 1.6em;
+            }
+            
+            .book-message {
+                font-size: 1em;
+            }
+            
+            .glow-button {
+                font-size: 1.1em;
+                padding: 15px 35px;
+            }
+
+            .go-back-button {
+                font-size: 1.1em;
+                padding: 12px 35px;
+            }
+            
+            .lotus {
+                font-size: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thank-you-header {
+                font-size: 2.5em;
+            }
+            
+            .special-message-title {
+                font-size: 1.3em;
+            }
+            
+            .book-content {
+                padding: 25px 15px;
+            }
+            
+            .book-left-text {
+                font-size: 1.4em;
+            }
+            
+            .book-message {
+                font-size: 0.95em;
+            }
+            
+            .glow-button {
+                font-size: 1em;
+                padding: 12px 30px;
+            }
+
+            .go-back-button {
+                font-size: 1em;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Lotus Background -->
+    <div class="lotus-bg">
+        <div class="lotus lotus-left">🪷</div>
+        <div class="lotus lotus-right">🪷</div>
+    </div>
+    
+    <!-- Floating hearts background -->
+    <div class="heart-bg" id="heartBg"></div>
+    
+    <div class="container">
+        <!-- Sparkle decorations -->
+        <div class="sparkle-decoration" style="top: 30px; left: 50px;">✨</div>
+        <div class="sparkle-decoration" style="top: 50px; right: 60px; animation-delay: 0.5s;">💫</div>
+        <div class="sparkle-decoration" style="bottom: 80px; left: 60px; animation-delay: 1s;">⭐</div>
+        <div class="sparkle-decoration" style="bottom: 100px; right: 50px; animation-delay: 1.5s;">✨</div>
+        
+        <h1 class="thank-you-header">Thank You Soo Much! 💖</h1>
+        
+        <p class="special-message-title">This is for you beautiful ✨</p>
+        
+        <div class="book-card-container">
+            <!-- Front of book (Birthday card) -->
+            <div class="book-card" id="bookCard">
+                <div class="book-front" id="bookFront">
+                    <div class="book-front-inner">
+                        <div class="balloons">🎈🎈🎈</div>
+                        <div class="ribbon">🎀</div>
+                        <div class="birthday-title">
+                            <div class="sparkles-top">✨ ✨ ✨</div>
+                            <p class="birthday-text-1">This is to</p>
+                            <p class="birthday-text-2">My Special One</p>
+                            <p class="birthday-text-3">From bottom of my heart 💖</p>
+                            <div class="sparkles-top">✨ ✨ ✨</div>
+                        </div>
+                        <div class="tap-to-open">Tap to Open</div>
+                    </div>
+                </div>
+                
+                <!-- Open book view -->
+                <div class="book-open" id="bookOpen">
+                    <div class="book-content">
+                        <div class="book-left">
+                            <p class="book-left-text">You are my<br>special one 💕</p>
+                        </div>
+                        <div class="book-right">
+                            <p class="book-message">
+                                Saee, you deserve all the happiness, love, and smiles in the world today and always. You have this special way of making everything around you brighter, your smile, your kindness, and the way you make people feel truly cared for. I hope your day is filled with laughter, surprises, and moments that make your heart happy. You're truly one of a kind, and I just want you to know how special you are. Keep being the amazing person you are, spreading joy wherever you go. Wishing you endless happiness and love! 💝✨🌹
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="glow-button" id="openBookBtn">
+            Click Me Hehehe.... 😊💝
+        </button>
+
+        <button class="go-back-button" id="goBackBtn">
+            Go Back, Pretty 💕
+        </button>
+    </div>
+    
+    <script>
+        const bookCard = document.getElementById('bookCard');
+        const bookFront = document.getElementById('bookFront');
+        const bookOpen = document.getElementById('bookOpen');
+        const openBookBtn = document.getElementById('openBookBtn');
+        const goBackBtn = document.getElementById('goBackBtn');
+        let isOpen = false;
+        
+        // Handle diary/card opening (when card is clicked)
+        function openDiary() {
+            if (!isOpen) {
+                // Open the diary
+                bookCard.classList.add('opened');
+                openBookBtn.style.display = 'none';
+                goBackBtn.classList.add('show');
+                isOpen = true;
+            }
+        }
+
+        // Handle go back button (close the diary)
+        function closeDiary() {
+            if (isOpen) {
+                // Close the diary
+                bookCard.classList.remove('opened');
+                openBookBtn.style.display = 'inline-block';
+                goBackBtn.classList.remove('show');
+                isOpen = false;
+            }
+        }
+
+        // Handle "Click Me Hehehe" button - goes directly to gifts page
+        function goToGifts() {
+            window.location.href = 'gifts.html';
+        }
+        
+        // Button click events
+        openBookBtn.addEventListener('click', goToGifts);
+        goBackBtn.addEventListener('click', closeDiary);
+        
+        // Card click event - opens the diary
+        bookFront.addEventListener('click', openDiary);
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['💗', '💕', '💖', '💝'][Math.floor(Math.random() * 4)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.getElementById('heartBg').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 15000);
+        }
+        
+        setInterval(createHeart, 400);
+        for(let i = 0; i < 12; i++) {
+            setTimeout(createHeart, i * 300);
+        }
+    </script>
+</body>
+</html>

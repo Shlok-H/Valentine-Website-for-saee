@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Gift 🎁</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFF5E6 0%, #FFE5EC 50%, #F5E6FA 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        /* Cute bear with hearts */
+        .bear-container {
+            margin-bottom: 30px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .bear-gif {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 182, 193, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        /* Title */
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            color: #8B4513;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Gifts container */
+        .gifts-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        /* Individual gift box */
+        .gift-box {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: giftFloat 3s ease-in-out infinite;
+        }
+        
+        .gift-box:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .gift-box:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .gift-box:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes giftFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gift-box:hover {
+            transform: scale(1.15) translateY(-10px);
+        }
+        
+        .gift-image {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(255, 105, 180, 0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .gift-box:hover .gift-image {
+            transform: scale(1.1);
+        }
+
+        /* Last Page Button */
+        .last-page-btn {
+            background: linear-gradient(135deg, #FF69B4, #FFB6C1, #FFD700);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            transition: all 0.4s ease;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% {
+                box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            }
+            50% {
+                box-shadow: 0 20px 50px rgba(255, 105, 180, 0.7);
+            }
+        }
+
+        .last-page-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .last-page-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .last-page-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.7);
+        }
+
+        .last-page-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .bear-gif {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .gifts-container {
+                gap: 40px;
+            }
+            
+            .gift-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .last-page-btn {
+                font-size: 1.1em;
+                padding: 15px 35px;
+                margin-top: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.8em;
+            }
+            
+            .bear-gif {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .gifts-container {
+                gap: 35px;
+            }
+            
+            .gift-image {
+                width: 170px;
+                height: 170px;
+            }
+
+            .last-page-btn {
+                font-size: 1em;
+                padding: 12px 30px;
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bear-container">
+            <img src="https://media.tenor.com/saJkA-UIuoYAAAAi/peach-goma.gif" 
+                 alt="Dancing Bear" 
+                 class="bear-gif"
+                 onerror="this.src='https://media.tenor.com/saJkA-UIuoYAAAAi/peach-goma.gif'">
+        </div>
+        
+        <h1 class="title">Choose a Gift!</h1>
+        
+        <div class="gifts-container">
+            <div class="gift-box" onclick="window.location.href='gift2.html'">
+                <img src="gifticon.png" alt="Gift" class="gift-image">
+            </div>
+            <div class="gift-box" onclick="window.location.href='gift3.html'">
+                <img src="gifticon.png" alt="Gift" class="gift-image">
+            </div>
+        </div>
+
+        <button class="last-page-btn" onclick="window.location.href='final.html'">
+            Last Page 💝✨
+        </button>
+    </div>
+</body>
+</html>

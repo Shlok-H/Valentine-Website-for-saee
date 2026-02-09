@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Saee 💝</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600;700&family=Great+Vibes&family=Dancing+Script:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFE5EC 0%, #E6E6FA 50%, #FFB6C1 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+        
+        /* Floating hearts */
+        .heart-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatHeart 15s infinite;
+            opacity: 0.2;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main container */
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px 60px;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(255, 105, 180, 0.35);
+            backdrop-filter: blur(15px);
+            max-width: 700px;
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+            border: 3px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header */
+        .gratitude-header {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #FF1493, #FF69B4, #DDA0DD, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 5px rgba(255, 105, 180, 0.3));
+            }
+            50% {
+                filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 105, 180, 0.5));
+            }
+        }
+
+        /* Gratitude message */
+        .gratitude-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4em;
+            color: #8B0000;
+            line-height: 1.9;
+            margin: 30px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.15), rgba(221, 160, 221, 0.15));
+            border-radius: 20px;
+            border: 2px solid rgba(255, 105, 180, 0.2);
+            font-weight: 600;
+        }
+
+        /* Propose GIF */
+        .propose-gif-container {
+            margin: 40px 0;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .propose-gif {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+            border: 3px solid rgba(255, 182, 193, 0.5);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Review Section */
+        .review-section {
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        .review-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8em;
+            color: #FF1493;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1em;
+            color: #8B0000;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .star {
+            font-size: 2.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ddd;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #FFD700;
+            transform: scale(1.2);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .form-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1em;
+            border: 2px solid rgba(255, 105, 180, 0.3);
+            border-radius: 15px;
+            resize: vertical;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-color: #FF69B4;
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+            background: white;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #FF1493, #FF69B4, #FFD700);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            transition: all 0.4s ease;
+            margin-top: 25px;
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s ease-in-out infinite;
+            width: 100%;
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% {
+                box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            }
+            50% {
+                box-shadow: 0 20px 50px rgba(255, 105, 180, 0.7);
+            }
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.7);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .submit-btn:disabled {
+            background: linear-gradient(135deg, #ccc, #999);
+            cursor: not-allowed;
+            animation: none;
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #90EE90, #98FB98);
+            color: #006400;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 25px;
+            font-size: 1.2em;
+            font-weight: 600;
+            animation: slideIn 0.5s ease;
+            border: 2px solid #228B22;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Sparkles */
+        .sparkle-decoration {
+            position: absolute;
+            font-size: 1.5em;
+            animation: sparkle 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px 50px;
+            }
+            
+            .gratitude-header {
+                font-size: 2.8em;
+            }
+
+            .gratitude-message {
+                font-size: 1.2em;
+                padding: 20px;
+            }
+
+            .propose-gif {
+                width: 160px;
+                height: 160px;
+            }
+
+            .review-title {
+                font-size: 1.5em;
+            }
+
+            .star {
+                font-size: 2em;
+            }
+
+            .submit-btn {
+                font-size: 1.1em;
+                padding: 15px 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gratitude-header {
+                font-size: 2.3em;
+            }
+
+            .gratitude-message {
+                font-size: 1.1em;
+                padding: 18px;
+            }
+
+            .propose-gif {
+                width: 140px;
+                height: 140px;
+            }
+
+            .review-title {
+                font-size: 1.3em;
+            }
+
+            .star {
+                font-size: 1.8em;
+            }
+
+            .submit-btn {
+                font-size: 1em;
+                padding: 12px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="heart-bg" id="heartBg"></div>
+    
+    <div class="container">
+        <!-- Sparkle decorations -->
+        <div class="sparkle-decoration" style="top: 30px; left: 50px;">✨</div>
+        <div class="sparkle-decoration" style="top: 50px; right: 60px; animation-delay: 0.5s;">💫</div>
+        <div class="sparkle-decoration" style="bottom: 80px; left: 60px; animation-delay: 1s;">⭐</div>
+        <div class="sparkle-decoration" style="bottom: 100px; right: 50px; animation-delay: 1.5s;">✨</div>
+        
+        <h1 class="gratitude-header">From My Heart 💖</h1>
+        
+        <p class="gratitude-message">
+            Thank you so much, Saee, for visiting this website! I really hope you liked everything I've created for you. Every little detail was made with you in mind because I truly care about you. I wanted you to know that I really, really like you, Saee. You mean so much to me, and I just wanted to show you how special you are in the most creative way I could think of. This is my way of saying... you're amazing! 💝✨🌹
+        </p>
+
+        <div class="propose-gif-container">
+            <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" 
+                 alt="Propose with love" 
+                 class="propose-gif"
+                 onerror="this.src='https://media.tenor.com/CevIAo-JjJ8AAAAi/milk-and-mocha-bear-kiss.gif'">
+        </div>
+
+        <div class="review-section">
+            <h2 class="review-title">How much did you like this? 💕</h2>
+            
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label class="form-label">Rate this experience:</label>
+                    <div class="rating-container" id="ratingStars">
+                        <span class="star" data-rating="1">⭐</span>
+                        <span class="star" data-rating="2">⭐</span>
+                        <span class="star" data-rating="3">⭐</span>
+                        <span class="star" data-rating="4">⭐</span>
+                        <span class="star" data-rating="5">⭐</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">Share your thoughts (optional):</label>
+                    <textarea 
+                        id="message" 
+                        class="form-textarea" 
+                        placeholder="Tell me what you think... Did you like it? What was your favorite part? 💭"
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Submit Your Feedback 💝
+                </button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                ✨ Thank you so much for your feedback, Saee! Your response means the world to me! 💖
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Rating system
+        const stars = document.querySelectorAll('.star');
+        const form = document.getElementById('reviewForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+        let selectedRating = 0;
+
+        // Star rating click handler
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                selectedRating = parseInt(this.getAttribute('data-rating'));
+                updateStars(selectedRating);
+            });
+
+            star.addEventListener('mouseenter', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                updateStars(rating);
+            });
+        });
+
+        // Reset stars on mouse leave
+        document.getElementById('ratingStars').addEventListener('mouseleave', function() {
+            updateStars(selectedRating);
+        });
+
+        function updateStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        // Get user information
+        async function getUserInfo() {
+            const userInfo = {
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                platform: navigator.platform,
+                screenResolution: `${window.screen.width}x${window.screen.height}`,
+                timestamp: new Date().toISOString(),
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+
+            // Try to get IP and location information
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                userInfo.ip = data.ip || 'Unknown';
+                userInfo.city = data.city || 'Unknown';
+                userInfo.region = data.region || 'Unknown';
+                userInfo.country = data.country_name || 'Unknown';
+                userInfo.latitude = data.latitude || 'Unknown';
+                userInfo.longitude = data.longitude || 'Unknown';
+            } catch (error) {
+                console.log('Could not fetch IP info:', error);
+                userInfo.ip = 'Unknown';
+                userInfo.location = 'Unknown';
+            }
+
+            return userInfo;
+        }
+
+        // Browser detection
+        function getBrowserInfo() {
+            const ua = navigator.userAgent;
+            let browserName = 'Unknown';
+            let browserVersion = 'Unknown';
+
+            if (ua.indexOf('Firefox') > -1) {
+                browserName = 'Firefox';
+                browserVersion = ua.match(/Firefox\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Chrome') > -1 && ua.indexOf('Edg') === -1) {
+                browserName = 'Chrome';
+                browserVersion = ua.match(/Chrome\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Safari') > -1 && ua.indexOf('Chrome') === -1) {
+                browserName = 'Safari';
+                browserVersion = ua.match(/Version\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Edg') > -1) {
+                browserName = 'Edge';
+                browserVersion = ua.match(/Edg\/([0-9.]+)/)?.[1] || 'Unknown';
+            }
+
+            return { browserName, browserVersion };
+        }
+
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            if (selectedRating === 0) {
+                alert('Please select a rating before submitting! ⭐');
+                return;
+            }
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting... 💫';
+
+            // Get all information
+            const userInfo = await getUserInfo();
+            const browserInfo = getBrowserInfo();
+            const message = document.getElementById('message').value;
+
+            // Prepare data to save
+            const feedbackData = {
+                rating: selectedRating,
+                message: message || 'No message provided',
+                ...userInfo,
+                ...browserInfo,
+                submittedAt: new Date().toLocaleString()
+            };
+
+            console.log('Feedback Data:', feedbackData);
+
+            // Try to save to server via PHP
+            try {
+                const response = await fetch('save_review.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(feedbackData)
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    console.log('Feedback saved to server successfully!');
+                } else {
+                    console.error('Server save failed:', result.error);
+                }
+            } catch (error) {
+                console.error('Could not connect to server:', error);
+                // Fallback: Save to localStorage if server is unavailable
+                let allFeedback = JSON.parse(localStorage.getItem('saee Feedback') || '[]');
+                allFeedback.push(feedbackData);
+                localStorage.setItem('saee Feedback', JSON.stringify(allFeedback));
+                console.log('Feedback saved to localStorage as fallback');
+            }
+
+            // Show success message
+            setTimeout(() => {
+                successMessage.classList.add('show');
+                form.style.display = 'none';
+                createConfetti();
+            }, 500);
+        });
+
+        // Confetti effect
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    let confetti = document.createElement('div');
+                    confetti.innerHTML = ['💖', '💝', '💕', '💗', '🌹', '✨', '⭐'][Math.floor(Math.random() * 7)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear forwards`;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 30);
+            }
+            
+            let confettiStyle = document.createElement('style');
+            confettiStyle.innerHTML = `
+                @keyframes confettiFall {
+                    to {
+                        transform: translateY(100vh) rotate(${Math.random() * 360}deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(confettiStyle);
+        }
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['💗', '💕', '💖', '💝'][Math.floor(Math.random() * 4)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.getElementById('heartBg').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 15000);
+        }
+        
+        setInterval(createHeart, 400);
+        for(let i = 0; i < 12; i++) {
+            setTimeout(createHeart, i * 300);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something Special 💝</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFE5EC 0%, #E6E6FA 50%, #FFB6C1 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Floating hearts background */
+        .heart-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 15s infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Falling roses background */
+        .rose-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .falling-rose {
+            position: absolute;
+            font-size: 30px;
+            animation: fall 12s linear infinite;
+            opacity: 0.15;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.15;
+            }
+            90% {
+                opacity: 0.15;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .falling-rose:nth-child(even) {
+            animation: fallSway 14s linear infinite;
+        }
+        
+        @keyframes fallSway {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.15;
+            }
+            25% {
+                transform: translateY(25vh) translateX(-30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(50vh) translateX(30px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(75vh) translateX(-20px) rotate(270deg);
+            }
+            90% {
+                opacity: 0.15;
+            }
+            100% {
+                transform: translateY(100vh) translateX(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main container */
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            animation: fadeInScale 1s ease-out;
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .special-text {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #FF69B4, #DDA0DD, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+        
+        .name {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            color: #8B0000;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #8B0000;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        /* Flower/Rose Animation */
+        .flower-container {
+            margin: 40px 0;
+            position: relative;
+            height: 200px;
+        }
+        
+        .rose {
+            font-size: 120px;
+            animation: grow 2s ease-out, sway 3s ease-in-out infinite;
+            display: inline-block;
+            filter: drop-shadow(0 10px 20px rgba(255, 105, 180, 0.4));
+        }
+        
+        @keyframes grow {
+            from {
+                transform: scale(0) translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+        
+        /* Sparkles around the rose */
+        .sparkle {
+            position: absolute;
+            font-size: 30px;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .sparkle:nth-child(1) {
+            top: 20px;
+            left: 30%;
+            animation-delay: 0s;
+        }
+        
+        .sparkle:nth-child(2) {
+            top: 40px;
+            right: 30%;
+            animation-delay: 0.5s;
+        }
+        
+        .sparkle:nth-child(3) {
+            bottom: 60px;
+            left: 25%;
+            animation-delay: 1s;
+        }
+        
+        .sparkle:nth-child(4) {
+            bottom: 80px;
+            right: 25%;
+            animation-delay: 1.5s;
+        }
+        
+        /* Button */
+        .continue-btn {
+            background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.4);
+            transition: all 0.3s ease;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .continue-btn:hover {
+            background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.6);
+        }
+        
+        .continue-btn:active {
+            transform: scale(1.05) translateY(-2px);
+        }
+        
+        /* Cute emoji decorations */
+        .emoji-decoration {
+            font-size: 2em;
+            position: absolute;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .emoji-1 {
+            top: 50px;
+            left: 30px;
+            animation-delay: 0s;
+        }
+        
+        .emoji-2 {
+            top: 80px;
+            right: 40px;
+            animation-delay: 1s;
+        }
+        
+        .emoji-3 {
+            bottom: 60px;
+            left: 50px;
+            animation-delay: 2s;
+        }
+        
+        .emoji-4 {
+            bottom: 80px;
+            right: 30px;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+            
+            .special-text {
+                font-size: 1.8em;
+            }
+            
+            .name {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+            
+            .rose {
+                font-size: 80px;
+            }
+            
+            .continue-btn {
+                padding: 15px 40px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Falling roses background -->
+    <div class="rose-bg" id="roseBg"></div>
+    
+    <!-- Floating hearts background -->
+    <div class="heart-bg" id="heartBg"></div>
+    
+    <div class="container">
+        <!-- Emoji decorations -->
+        <div class="emoji-decoration emoji-1">💕</div>
+        <div class="emoji-decoration emoji-2">✨</div>
+        <div class="emoji-decoration emoji-3">🌸</div>
+        <div class="emoji-decoration emoji-4">💖</div>
+        
+        <h1 class="special-text">This is specially made for</h1>
+        <h2 class="name">Saee</h2>
+        <p class="subtitle">Someone who makes every day brighter ✨</p>
+        
+        <div class="flower-container">
+            <span class="sparkle">✨</span>
+            <span class="sparkle">⭐</span>
+            <span class="sparkle">💫</span>
+            <span class="sparkle">✨</span>
+            <div class="rose">🌹</div>
+        </div>
+        
+        <button class="continue-btn" onclick="window.location.href='index.html'">
+            click here beautiful 💝
+        </button>
+    </div>
+    
+    <script>
+        // Create falling roses
+        function createFallingRose() {
+            const rose = document.createElement('div');
+            rose.className = 'falling-rose';
+            rose.innerHTML = '🌹';
+            rose.style.left = Math.random() * 100 + '%';
+            rose.style.animationDuration = (Math.random() * 5 + 10) + 's';
+            rose.style.fontSize = (Math.random() * 20 + 25) + 'px';
+            rose.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('roseBg').appendChild(rose);
+            
+            setTimeout(() => {
+                rose.remove();
+            }, 15000);
+        }
+        
+        // Create roses periodically
+        setInterval(createFallingRose, 800);
+        
+        // Initial roses
+        for(let i = 0; i < 15; i++) {
+            setTimeout(createFallingRose, i * 500);
+        }
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💗';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.getElementById('heartBg').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 15000);
+        }
+        
+        // Create hearts periodically
+        setInterval(createHeart, 300);
+        
+        // Initial hearts
+        for(let i = 0; i < 10; i++) {
+            setTimeout(createHeart, i * 300);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift 2 - I Love You 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600;700&family=Great+Vibes&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFE5EC 0%, #FFB6C1 50%, #FF69B4 100%);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* BIG visible hearts background */
+        .heart-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .big-heart {
+            position: absolute;
+            font-size: 80px;
+            animation: floatBigHeart 8s infinite;
+            opacity: 0.4;
+            filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.5));
+        }
+        
+        @keyframes floatBigHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg) scale(1.3);
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+        
+        /* Pulsing hearts */
+        .pulse-heart {
+            position: absolute;
+            font-size: 60px;
+            animation: pulseHeart 2s ease-in-out infinite;
+            opacity: 0.5;
+        }
+        
+        @keyframes pulseHeart {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.7;
+            }
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            z-index: 2;
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 30px;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(255, 20, 147, 0.4);
+            border: 3px solid rgba(255, 105, 180, 0.5);
+        }
+        
+        /* I Love You GIF */
+        .love-gif-container {
+            margin: 30px 0;
+        }
+        
+        .love-gif {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
+            border: 5px solid rgba(255, 182, 193, 0.6);
+        }
+        
+        /* Text below GIF */
+        .love-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            background: linear-gradient(45deg, #FF1493, #FF69B4, #FFB6C1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 30px 0;
+            animation: textGlow 2s ease-in-out infinite;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+        }
+        
+        @keyframes textGlow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.3);
+            }
+        }
+        
+        /* Go Back button */
+        .go-back-btn {
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.3em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .go-back-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 20, 147, 0.7);
+        }
+        
+        /* Music player indicator */
+        .music-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 105, 180, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.9em;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+            z-index: 1000;
+            animation: musicPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            font-size: 2em;
+            animation: sparkle 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+            
+            .love-gif {
+                max-width: 350px;
+            }
+            
+            .love-text {
+                font-size: 2.5em;
+            }
+            
+            .big-heart {
+                font-size: 60px;
+            }
+            
+            .pulse-heart {
+                font-size: 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .love-gif {
+                max-width: 280px;
+            }
+            
+            .love-text {
+                font-size: 2em;
+            }
+            
+            .go-back-btn {
+                padding: 15px 35px;
+                font-size: 1.1em;
+            }
+            
+            .big-heart {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music Player (Hidden) -->
+    <div style="position: fixed; top: -1000px; left: -1000px; width: 1px; height: 1px; overflow: hidden;">
+        <iframe width="1" height="1" 
+                src="https://www.youtube.com/embed/vgm1u2gPxzw?autoplay=1&loop=1&playlist=vgm1u2gPxzw&controls=0" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+    
+    <!-- Music playing indicator -->
+    <div class="music-indicator">
+        🎵 Playing: Raanjhana
+    </div>
+    
+    <!-- BIG visible hearts background -->
+    <div class="heart-bg" id="heartBg"></div>
+    
+    <!-- Pulsing corner hearts -->
+    <div class="pulse-heart" style="top: 10%; left: 5%;">💖</div>
+    <div class="pulse-heart" style="top: 15%; right: 8%; animation-delay: 0.5s;">❤️</div>
+    <div class="pulse-heart" style="bottom: 10%; left: 8%; animation-delay: 1s;">💕</div>
+    <div class="pulse-heart" style="bottom: 15%; right: 5%; animation-delay: 1.5s;">💗</div>
+    
+    <div class="container">
+        <!-- Sparkles -->
+        <div class="sparkle" style="top: 20px; left: 30px;">✨</div>
+        <div class="sparkle" style="top: 40px; right: 40px; animation-delay: 0.5s;">💫</div>
+        <div class="sparkle" style="bottom: 60px; left: 50px; animation-delay: 1s;">⭐</div>
+        <div class="sparkle" style="bottom: 80px; right: 35px; animation-delay: 1.5s;">✨</div>
+        
+        <!-- I Love You GIF -->
+        <div class="love-gif-container">
+            <img src="https://media.tenor.com/xS0Jc_w3ObkAAAAi/cosytales-art.gif" 
+                 alt="I Love You" 
+                 class="love-gif"
+                 onerror="this.src='https://media.tenor.com/xS0Jc_w3ObkAAAAi/cosytales-art.gif'">
+        </div>
+        
+        <!-- Text below -->
+        <h1 class="love-text">This is for you ❤️✨</h1>
+        
+        <button class="go-back-btn" onclick="window.location.href='gifts.html'">
+            Go Back, Cutie 💝
+        </button>
+    </div>
+    
+    <script>
+        // Create BIG floating hearts
+        function createBigHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'big-heart';
+            heart.innerHTML = ['❤️', '💖', '💗', '💕', '💝'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            heart.style.fontSize = (Math.random() * 40 + 60) + 'px';
+            document.getElementById('heartBg').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 10000);
+        }
+        
+        // Create hearts frequently for visible effect
+        setInterval(createBigHeart, 800);
+        for(let i = 0; i < 8; i++) {
+            setTimeout(createBigHeart, i * 600);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Saee 💝</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;600;700&family=Great+Vibes&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFE5EC 0%, #E6E6FA 50%, #FFB6C1 100%);
+            overflow-x: hidden;
+            position: relative;
+            padding: 20px;
+        }
+        
+        /* Falling roses background - MORE ROSES with VARIED ANIMATIONS */
+        .rose-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .falling-rose {
+            position: absolute;
+            font-size: 35px;
+            animation: fall 12s linear infinite;
+            opacity: 0.2;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Multiple animation variations for roses */
+        .falling-rose:nth-child(2n) {
+            animation: fallSway 14s linear infinite;
+        }
+        
+        .falling-rose:nth-child(3n) {
+            animation: fallTwist 13s linear infinite;
+        }
+        
+        .falling-rose:nth-child(4n) {
+            animation: fallZigzag 15s linear infinite;
+        }
+        
+        .falling-rose:nth-child(5n) {
+            animation: fallSpiral 16s linear infinite;
+        }
+        
+        @keyframes fallSway {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            25% {
+                transform: translateY(25vh) translateX(-50px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(50vh) translateX(50px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(75vh) translateX(-40px) rotate(270deg);
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(100vh) translateX(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fallTwist {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            30% {
+                transform: translateY(30vh) translateX(30px) rotate(180deg) scale(1.3);
+            }
+            60% {
+                transform: translateY(60vh) translateX(-30px) rotate(360deg) scale(0.7);
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(100vh) translateX(0) rotate(540deg) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fallZigzag {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            20% {
+                transform: translateY(20vh) translateX(-60px) rotate(72deg);
+            }
+            40% {
+                transform: translateY(40vh) translateX(60px) rotate(144deg);
+            }
+            60% {
+                transform: translateY(60vh) translateX(-50px) rotate(216deg);
+            }
+            80% {
+                transform: translateY(80vh) translateX(40px) rotate(288deg);
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(100vh) translateX(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fallSpiral {
+            0% {
+                transform: translateY(-100px) translateX(0) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            25% {
+                transform: translateY(25vh) translateX(40px) rotate(180deg) scale(1.2);
+            }
+            50% {
+                transform: translateY(50vh) translateX(-40px) rotate(360deg) scale(0.9);
+            }
+            75% {
+                transform: translateY(75vh) translateX(35px) rotate(540deg) scale(1.1);
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(100vh) translateX(0) rotate(720deg) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        /* Floating hearts */
+        .heart-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatHeart 15s infinite;
+            opacity: 0.25;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.25;
+            }
+            90% {
+                opacity: 0.25;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main container */
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 40px 60px;
+            border-radius: 40px;
+            box-shadow: 0 25px 70px rgba(255, 105, 180, 0.35);
+            backdrop-filter: blur(15px);
+            max-width: 650px;
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+            border: 3px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Header decoration */
+        .heart-header {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Main question */
+        .main-question {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            background: linear-gradient(45deg, #FF1493, #FF69B4, #DDA0DD, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+            animation: glow 3s ease-in-out infinite;
+            line-height: 1.3;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 5px rgba(255, 105, 180, 0.3));
+            }
+            50% {
+                filter: brightness(1.2) drop-shadow(0 0 15px rgba(255, 105, 180, 0.5));
+            }
+        }
+        
+        /* Shayari section - IMPROVED FONT & READABILITY */
+        .shayari {
+            margin: 30px 0 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.25), rgba(221, 160, 221, 0.25));
+            border-radius: 25px;
+            border: 2px dashed rgba(255, 105, 180, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15);
+        }
+        
+        .shayari-line {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.45em;
+            color: #8B0000;
+            font-weight: 600;
+            margin: 14px 0;
+            animation: fadeIn 2s ease-in;
+            text-shadow: 1px 1px 3px rgba(255, 182, 193, 0.4);
+            line-height: 1.7;
+            letter-spacing: 0.3px;
+        }
+        
+        .shayari-line:first-child {
+            animation-delay: 0.3s;
+        }
+        
+        .shayari-line:last-child {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* GIF container */
+        .gif-container {
+            margin: 30px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .cat-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 105, 180, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5));
+            object-fit: cover;
+        }
+        
+        /* Buttons container */
+        .buttons-container {
+            margin-top: 40px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 80px;
+        }
+        
+        /* Yes button */
+        #yesBtn {
+            background: linear-gradient(135deg, #FF69B4, #FFB6C1, #FFD700);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 1.5em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #yesBtn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        #yesBtn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        #yesBtn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(255, 105, 180, 0.6);
+        }
+        
+        #yesBtn:active {
+            transform: translateY(-4px) scale(1.02);
+        }
+        
+        /* No button - STAYS IN PLACE */
+        #noBtn {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(221, 160, 221, 0.3));
+            color: #8B0000;
+            border: 2px solid rgba(255, 105, 180, 0.4);
+            padding: 15px 35px;
+            font-size: 1em;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        #noBtn:hover {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.5), rgba(221, 160, 221, 0.5));
+            transform: scale(1.05);
+        }
+        
+        /* Sparkles decoration */
+        .sparkle-decoration {
+            position: absolute;
+            font-size: 1.5em;
+            animation: sparkle 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+        
+        /* Gentle shake for Yes button */
+        @keyframes gentleShake {
+            0%, 100% { 
+                transform: scale(var(--scale, 1)) rotate(0deg); 
+            }
+            25% { 
+                transform: scale(var(--scale, 1)) rotate(-5deg); 
+            }
+            75% { 
+                transform: scale(var(--scale, 1)) rotate(5deg); 
+            }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px 50px;
+                margin: 10px;
+            }
+            
+            .main-question {
+                font-size: 2.8em;
+            }
+            
+            .shayari-line {
+                font-size: 1.25em;
+            }
+            
+            .cat-img {
+                width: 160px;
+                height: 160px;
+            }
+            
+            #yesBtn {
+                padding: 18px 40px;
+                font-size: 1.3em;
+            }
+            
+            #noBtn {
+                padding: 12px 28px;
+                font-size: 0.9em;
+            }
+            
+            .buttons-container {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px 40px;
+            }
+            
+            .heart-header {
+                font-size: 2.5em;
+            }
+            
+            .main-question {
+                font-size: 2.2em;
+            }
+            
+            .shayari {
+                padding: 20px 15px;
+            }
+            
+            .shayari-line {
+                font-size: 1.1em;
+            }
+            
+            .cat-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            #yesBtn {
+                padding: 15px 35px;
+                font-size: 1.2em;
+            }
+            
+            #noBtn {
+                padding: 10px 25px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Falling roses background -->
+    <div class="rose-bg" id="roseBg"></div>
+    
+    <!-- Floating hearts background -->
+    <div class="heart-bg" id="heartBg"></div>
+    
+    <div class="container">
+        <!-- Sparkle decorations -->
+        <div class="sparkle-decoration" style="top: 30px; left: 50px;">✨</div>
+        <div class="sparkle-decoration" style="top: 50px; right: 60px; animation-delay: 0.5s;">💫</div>
+        <div class="sparkle-decoration" style="bottom: 80px; left: 60px; animation-delay: 1s;">⭐</div>
+        <div class="sparkle-decoration" style="bottom: 100px; right: 50px; animation-delay: 1.5s;">✨</div>
+        
+        <div class="heart-header">💖</div>
+        
+        <h1 class="main-question">Will You Be My Valentine?</h1>
+        
+        <div class="shayari">
+            <p class="shayari-line">Saee, tu jo paas ho toh duniya haseen lagti hai,</p>
+            <p class="shayari-line">Tere bina har khushi adhuri si lagti hai... 💕</p>
+        </div>
+        
+        <div class="gif-container">
+            <img src="https://media.tenor.com/LBEh1g_3QbUAAAAi/please-pretty-please.gif" 
+                 alt="Milk and Mocha cute bears" 
+                 class="cat-img"
+                 onerror="this.src='https://i.pinimg.com/originals/91/1e/27/911e27b415c6b0207a6b2b865016830c.gif'">
+        </div>
+        
+        <div class="buttons-container" id="btnContainer">
+            <button id="yesBtn" onclick="handleYes()">
+                Yes! 💝
+            </button>
+            <button id="noBtn" onclick="handleNo()">
+                No, please don't break my heart 💔
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        let yesBtn = document.getElementById('yesBtn');
+        let noBtn = document.getElementById('noBtn');
+        let yesBtnSize = 1;
+        let noClickCount = 0;
+        
+        // Handle No button click - DOESN'T MOVE, just grows Yes and changes text
+        function handleNo() {
+            // Increase Yes button size slightly
+            yesBtnSize += 0.15;
+            yesBtn.style.setProperty('--scale', yesBtnSize);
+            yesBtn.style.transform = `scale(${yesBtnSize})`;
+            yesBtn.style.transition = 'transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            
+            // Increment click count
+            noClickCount++;
+            
+            // Array of "No, ..." messages
+            const noMessages = [
+                "No, please don't break my heart 💔",
+                "No, ek baar soch lo Saee 🥺",
+                "No, you're breaking my heart 💔",
+                "No, give me a chance na 🥹",
+                "No, but I really like you 💕",
+                "No, pretty please? 🌹",
+                "No, main kya karun ab? 😢",
+                "No, think about us Saee 💑",
+                "No, meri baat toh suno 💝",
+                "No, I promise to make you happy 😊",
+                "No, bas ek chance de do please 🙏",
+                "No, you mean everything to me 💖",
+                "No, don't do this to me 😭",
+                "No, mere dil ki suno Saee 💗",
+                "No, I'll always care for you 🌸",
+                "No, we could be so happy together 💞"
+            ];
+            
+            // Get message based on click count (cycles through messages)
+            let messageIndex = Math.min(noClickCount, noMessages.length - 1);
+            noBtn.innerHTML = noMessages[messageIndex];
+            
+            // Add gentle shake animation to Yes button
+            yesBtn.style.animation = 'gentleShake 0.5s ease';
+            setTimeout(() => {
+                yesBtn.style.animation = '';
+            }, 500);
+        }
+        
+        // Handle Yes click
+        function handleYes() {
+            // Create confetti effect
+            createConfetti();
+            
+            // Wait a bit then redirect
+            setTimeout(() => {
+                window.location.href = 'thankyou.html';
+            }, 2000);
+        }
+        
+        // Confetti effect
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    let confetti = document.createElement('div');
+                    confetti.innerHTML = ['💖', '💝', '💕', '💗', '🌹', '✨'][Math.floor(Math.random() * 6)];
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear forwards`;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 20);
+            }
+            
+            let confettiStyle = document.createElement('style');
+            confettiStyle.innerHTML = `
+                @keyframes confettiFall {
+                    to {
+                        transform: translateY(100vh) rotate(${Math.random() * 360}deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(confettiStyle);
+        }
+        
+        // Create MORE falling roses with INFINITE loop
+        function createFallingRose() {
+            const rose = document.createElement('div');
+            rose.className = 'falling-rose';
+            rose.innerHTML = '🌹';
+            rose.style.left = Math.random() * 100 + '%';
+            rose.style.animationDuration = (Math.random() * 6 + 10) + 's';
+            rose.style.fontSize = (Math.random() * 25 + 30) + 'px';
+            rose.style.animationDelay = Math.random() * 3 + 's';
+            document.getElementById('roseBg').appendChild(rose);
+            
+            setTimeout(() => rose.remove(), 18000);
+        }
+        
+        // Create roses MORE FREQUENTLY for denser effect
+        setInterval(createFallingRose, 400); // Increased frequency
+        
+        // Initial roses - MORE at start
+        for(let i = 0; i < 30; i++) { // Increased from 15 to 30
+            setTimeout(createFallingRose, i * 300);
+        }
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '💗';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.getElementById('heartBg').appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 15000);
+        }
+        
+        setInterval(createHeart, 300);
+        for(let i = 0; i < 10; i++) {
+            setTimeout(createHeart, i * 300);
+        }
+    </script>
+</body>
+</html>
